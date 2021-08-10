@@ -20,17 +20,19 @@ a{
 body{
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
+    background: #0261bf;
+    transition: background .3s ease;
 }
 
 main{
-    background: #0261bf;
-    transition: background .3s ease;
+    height: 100%;
 }
 
 .container{
     max-width: 1200px;
     margin: 0 auto;
     height: 100%;
+    padding: 0 15px;
 
 }
 
@@ -40,8 +42,10 @@ main{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         &-nav{
             display: flex;
+            flex-wrap: wrap;
             li{
                 a{
                     display: block;
@@ -63,34 +67,70 @@ main{
         display: grid;
         grid-template-columns: 55% 45%;
         justify-content: space-between;
-        align-items: flex-start;
-        grid-template-rows: max-content;
+        align-items: flex-center;
+        @media(max-width: 767px){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         &-text{
             padding-top: 32px;
             h1{
                 font-size: 4rem;
                 color: #fff;
                 line-height: 140%;
+                @media(max-width: 767px){
+                    font-size: 2rem;
+                    text-align: center;
+                }
                 span{
                     display: block;
                     font-size: 6rem;
                     font-weight: 700;
+                    @media(max-width: 767px){
+                        font-size: 3rem;
+                    }
                 }
+              
             }
             p{
                 font-size: 1.125rem;
                 font-weight: 150%;
                 color:#fff;
-                padding-top: 16px;
+                margin-top: 16px;
+                @media(max-width: 767px){
+                    font-size: 0.875rem;
+                    text-align: center;
+                }
+            }
+            .btn{
+                display: inline-flex;
+                background: #fff;
+                padding: 8px 32px;
+                border-radius: 20px;
+                color: #000;
+                font-weight: 600;
+                margin-top: 32px;
+                @media(max-width: 767px){
+                    font-size: 0.875rem;
+                    margin-top: 16px;
+                    align-items: center;
+                }
             }
         }
         &-img{
             display: flex;
             justify-content: flex-end;
-            height: 80%;
+            @media(max-width: 767px){
+                margin-top: 32px;
+            }
             img{
                 object-fit: cover;
                 transition: 5s ease;
+                @media(max-width: 767px){
+                    max-width: 150px;
+                }
+                
                 
             }
         }
@@ -100,8 +140,12 @@ main{
 .switch__content{
     display: flex;
     justify-content: center;
+    margin: 32px 0;
     img{
-        max-width: 80px;
+        max-width: 60px;
+        @media(max-width: 767px){
+            max-width: 40px;
+        }
         & + img{
             margin-left: 32px;
         }

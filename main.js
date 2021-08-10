@@ -1,6 +1,6 @@
 const imagens = document.querySelectorAll('.switch__content img');
 const imgSecao = document.querySelector('.conteudo__wrapper-img img')
-const corBg = document.querySelector('main')
+const corBg = document.body;
 
 imagens.forEach((img)=>{
     img.addEventListener("click", mudaFoto);
